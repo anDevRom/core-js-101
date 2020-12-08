@@ -19,7 +19,8 @@
  *   '',  'bb'  => 'bb'
  */
 function concatenateStrings(/* value1, value2 */) {
-  throw new Error('Not implemented');
+  return arguments[0] + arguments[1]
+  // throw new Error('Not implemented');
 }
 
 
