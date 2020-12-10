@@ -100,8 +100,18 @@ function getSumBetweenNumbers(n1, n2) {
  *   10,1,1   =>  false
  *   10,10,10 =>  true
  */
-function isTriangle(/* a, b, c */) {
-  throw new Error('Not implemented');
+function isTriangle(a, b, c) {
+  const sides = [a, b, c];
+  sides.sort((d, e) => d - e);
+  const SUM_OF_TWO_L_SIDES = sides[0] + sides[1];
+  let result = null;
+  if (SUM_OF_TWO_L_SIDES > sides[2]) {
+    result = true;
+  } else {
+    result = false;
+  }
+  return result;
+  // throw new Error('Not implemented');
 }
 
 
@@ -168,8 +178,12 @@ function doRectanglesOverlap(/* rect1, rect2 */) {
  *   { center: { x:0, y:0 }, radius:10 },  { x:10, y:10 }   => false
  *
  */
-function isInsideCircle(/* circle, point */) {
-  throw new Error('Not implemented');
+function isInsideCircle(circle, point) {
+  const line = Math.hypot(Math.abs(circle.center.x - point.x), Math.abs(circle.center.y - point.y));
+  if (line < circle.radius) {
+    return true;
+  }
+  return false;
 }
 
 
@@ -184,8 +198,16 @@ function isInsideCircle(/* circle, point */) {
  *   'abracadabra'  => 'c'
  *   'entente' => null
  */
-function findFirstSingleChar(/* str */) {
-  throw new Error('Not implemented');
+function findFirstSingleChar(str) {
+  const chars = str.split('');
+  const result = chars.find((char) => chars.includes(chars.pop(char)) !== true);
+
+  if (result !== undefined) {
+    return result;
+  }
+
+  return null;
+  // throw new Error('Not implemented');
 }
 
 
@@ -228,8 +250,9 @@ function getIntervalString(/* a, b, isStartIncluded, isEndIncluded */) {
  * 'rotator' => 'rotator'
  * 'noon' => 'noon'
  */
-function reverseString(/* str */) {
-  throw new Error('Not implemented');
+function reverseString(str) {
+  return str.split('').reverse().join('');
+  // throw new Error('Not implemented');
 }
 
 
@@ -289,8 +312,16 @@ function isCreditCardNumber(/* ccn */) {
  *   10000 ( 1+0+0+0+0 = 1 ) => 1
  *   165536 (1+6+5+5+3+6 = 26,  2+6 = 8) => 8
  */
-function getDigitalRoot(/* num */) {
-  throw new Error('Not implemented');
+function getDigitalRoot(num) {
+  let numbers = num.toString().split('').map((number) => Number(number));
+  let sum = numbers.reduce((prevNum, currNum) => prevNum + currNum, 0);
+  while (sum > 9) {
+    numbers = sum.toString().split('').map((sumIn) => Number(sumIn));
+    sum = numbers.reduce((prevNum, currNum) => prevNum + currNum, 0);
+  }
+
+  return sum;
+  // throw new Error('Not implemented');
 }
 
 
@@ -316,6 +347,14 @@ function getDigitalRoot(/* num */) {
  *   '{[(<{[]}>)]}' = true
  */
 function isBracketsBalanced(/* str */) {
+  // let strIn = str;
+  // const BRS = ['[]', '()', '{}', '<>'];
+  // while (strIn.includes(BRS[0]) || strIn.includes(BRS[1])
+  //       || strIn.includes(BRS[2]) || strIn.includes(BRS[3])) {
+  //   BRS.forEach((bracket) => strIn = strIn.split(bracket).join(""));
+  // }
+  // if (strIn.length === 0) return true;
+  // return false;
   throw new Error('Not implemented');
 }
 

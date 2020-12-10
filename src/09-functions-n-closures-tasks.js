@@ -24,7 +24,7 @@
  *
  */
 function getComposition(f, g) {
-  return function (...args) {
+  return function wrapper(...args) {
     return f(g(...args));
   };
   // throw new Error('Not implemented');
@@ -48,7 +48,7 @@ function getComposition(f, g) {
  *
  */
 function getPowerFunction(exponent) {
-  return function (x) {
+  return function wrapper(x) {
     return x ** exponent;
   };
   // throw new Error('Not implemented');
@@ -154,7 +154,7 @@ function logger(/* func, logFunc */) {
  *   partialUsingArguments(fn, 'a','b','c','d')() => 'abcd'
  */
 function partialUsingArguments(fn, ...args1) {
-  return function (...args2) {
+  return function wrapper(...args2) {
     return fn(...args1, ...args2);
   };
   // throw new Error('Not implemented');
