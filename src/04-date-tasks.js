@@ -55,20 +55,20 @@ function parseDataFromIso8601(value) {
  *    Date(2012,1,1)    => true
  *    Date(2015,1,1)    => false
  */
-function isLeapYear(date) {
-  const YEAR = (new Date(date)).getFullYear();
-  let result = null;
-  if (YEAR % 4 !== 0) {
-    result = false;
-  } else if (YEAR % 100 !== 0) {
-    result = true;
-  } else if (YEAR % 400 !== 0) {
-    result = false;
-  } else {
-    result = true;
-  }
-  return result;
-  // throw new Error('Not implemented');
+function isLeapYear(/* date */) {
+  // const YEAR = (new Date(date)).getFullYear();
+  // let result = true;
+  // if (YEAR % 4 !== 0 && YEAR % 400 !== 0) {
+  //   result = false;
+  // } else if (YEAR % 100 !== 0) {
+  //   result = true;
+  // } else if (YEAR % 400 !== 0) {
+  //   result = false;
+  // } else {
+  //   result = true;
+  // }
+  // return result;
+  throw new Error('Not implemented');
 }
 
 

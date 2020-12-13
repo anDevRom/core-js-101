@@ -100,18 +100,18 @@ function getSumBetweenNumbers(n1, n2) {
  *   10,1,1   =>  false
  *   10,10,10 =>  true
  */
-function isTriangle(a, b, c) {
-  const sides = [a, b, c];
-  sides.sort((d, e) => d - e);
-  const SUM_OF_TWO_L_SIDES = sides[0] + sides[1];
-  let result = null;
-  if (SUM_OF_TWO_L_SIDES > sides[2]) {
-    result = true;
-  } else {
-    result = false;
-  }
-  return result;
-  // throw new Error('Not implemented');
+function isTriangle(/* a, b, c */) {
+  // const sides = [a, b, c];
+  // sides.sort((d, e) => d - e);
+  // const SUM_OF_TWO_L_SIDES = sides[0] + sides[1];
+  // let result;
+  // if (SUM_OF_TWO_L_SIDES > sides[2]) {
+  //   result = true;
+  // } else {
+  //   result = false;
+  // }
+  // return result;
+  throw new Error('Not implemented');
 }
 
 
