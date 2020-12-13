@@ -210,8 +210,15 @@ function roundToPowerOfTen(num, pow) {
  *   16 => false
  *   17 => true
  */
-function isPrime(/* n */) {
-  throw new Error('Not implemented');
+function isPrime(n) {
+  if (n < 2) return false;
+  for (let i = n - 1; i > 1; i -= 1) {
+    if (n % i === 0) {
+      return false;
+    }
+  }
+  return true;
+  // throw new Error('Not implemented');
 }
 
 /**
@@ -229,10 +236,11 @@ function isPrime(/* n */) {
  *   toNumber(42, 0) => 42
  *   toNumber(new Number(42), 0) => 42
  */
-function toNumber(/* value, def */) {
-  // const result = Number.isNaN(Number(value)) ? value : def;
-  // return result;
-  throw new Error('Not implemented');
+function toNumber(value, def) {
+  let result = def;
+  if (!Number.isNaN(Number(value))) result = Number(value);
+  return result;
+  // throw new Error('Not implemented');
 }
 
 module.exports = {
